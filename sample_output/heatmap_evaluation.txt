@@ -1,0 +1,26 @@
+========================================================================
+  Heatmap Quality Evaluation — SORT vs DeepSORT vs Ground Truth
+========================================================================
+
+Sequence       Tracker         Pearson       SSIM          MSE       KL Div
+---------------------------------------------------------------------------
+MOT17-09       SORT             0.9841     0.9535     0.000358       0.0903
+MOT17-09       DeepSORT         0.9507     0.9027     0.000824       0.1563
+
+MOT17-11       SORT             0.9758     0.9734     0.001016       0.2742
+MOT17-11       DeepSORT         0.9805     0.9617     0.001134       0.1155
+
+MOT20-01       SORT             0.4554     0.4491     0.028162       3.3911
+MOT20-01       DeepSORT         0.5914     0.5993     0.017428       2.4312
+
+---------------------------------------------------------------------------
+AVERAGE        SORT AVG         0.8051     0.7920     0.009845       1.2519
+AVERAGE        DeepSORT AVG     0.8409     0.8212     0.006462       0.9010
+
+Interpretation:
+  Pearson: higher = better (1.0 = perfect correlation with GT)
+  SSIM:    higher = better (1.0 = identical structure to GT)
+  MSE:     lower  = better (0.0 = identical to GT)
+  KL Div:  lower  = better (0.0 = identical distribution to GT)
+
+  Winner: DeepSORT (higher average Pearson correlation with GT)

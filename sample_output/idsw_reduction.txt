@@ -1,0 +1,7 @@
+SORT vs DeepSORT+ReID — ID Switch Reduction
+==================================================
+Sequence          SORT IDSW    DS IDSW    Reduction
+--------------------------------------------------
+MOT17-09                 28         35       -25.0%
+MOT17-11                 25         26        -4.0%
+OVERALL                  53         61       -15.1%
