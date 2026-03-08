@@ -52,13 +52,13 @@ python run_pipeline_mot20.py
 ### Compare SORT vs DeepSORT
 
 ```bash
-python compare.py
+python evaluation/compare.py
 ```
 
 ### ReID model ablation study
 
 ```bash
-python ablation_reid.py
+python evaluation/ablation_reid.py
 ```
 
 ## Sample Output
@@ -80,25 +80,35 @@ python ablation_reid.py
 
 ```
 retail-heat/
-├── config.py                  # Central configuration
-├── detect.py                  # YOLOv8 person detection
-├── track.py                   # SORT tracker
-├── deepsort_tracker.py        # DeepSORT tracker
-├── reid_embedder.py           # OSNet ReID feature extractor
-├── heatmap.py                 # KDE heatmap generation
-├── evaluate.py                # MOT metrics evaluation
-├── evaluate_heatmaps.py       # Heatmap quality metrics
-├── compare.py                 # SORT vs DeepSORT comparison
-├── ablation_reid.py           # ReID model ablation study
-├── visualize.py               # Visualization utilities
-├── run_pipeline.py            # SORT baseline pipeline
-├── run_pipeline_deepsort.py   # DeepSORT pipeline
-├── run_pipeline_mot20.py      # MOT20 pipeline
-├── sort_tracker.py            # SORT implementation
-├── track_deepsort.py          # DeepSORT tracking logic
-├── utils.py                   # Shared utilities
-├── requirements.txt           # Python dependencies
-└── weights/                   # Model weights (download separately)
+├── config.py                     # Central configuration
+├── utils.py                      # Shared utilities
+├── detection/
+│   ├── __init__.py
+│   └── detect.py                 # YOLOv8 person detection
+├── tracking/
+│   ├── __init__.py
+│   ├── sort_tracker.py           # SORT algorithm
+│   ├── deepsort_tracker.py       # DeepSORT wrapper
+│   ├── reid_embedder.py          # OSNet ReID feature extractor
+│   ├── track.py                  # SORT tracking orchestrator
+│   └── track_deepsort.py         # DeepSORT tracking orchestrator
+├── evaluation/
+│   ├── __init__.py
+│   ├── evaluate.py               # MOT metrics
+│   ├── evaluate_heatmaps.py      # Heatmap quality metrics
+│   ├── heatmap.py                # KDE heatmap generation
+│   ├── compare.py                # SORT vs DeepSORT comparison
+│   ├── visualize.py              # Video rendering
+│   └── ablation_reid.py          # ReID model ablation study
+├── docs/
+│   ├── REPORT.md
+│   └── MODEL_EXPLANATION.md
+├── run_pipeline.py               # SORT baseline pipeline
+├── run_pipeline_deepsort.py      # DeepSORT pipeline
+├── run_pipeline_mot20.py         # MOT20 pipeline
+├── run_pipeline_boxmot.py        # BoxMOT multi-tracker pipeline
+├── requirements.txt              # Python dependencies
+└── weights/                      # Model weights (download separately)
 ```
 
 ## Model

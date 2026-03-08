@@ -8,9 +8,9 @@ import numpy as np
 from tqdm import tqdm
 
 import config
-from detect import load_detector, detect_sequence
-from deepsort_tracker import DeepSortTracker
-from reid_embedder import ReIDEmbedder
+from detection.detect import load_detector, detect_sequence
+from tracking.deepsort_tracker import DeepSortTracker
+from tracking.reid_embedder import ReIDEmbedder
 from utils import get_frame_paths, save_tracks_mot_format
 
 

@@ -1,6 +1,7 @@
 """MOT evaluation using py-motmetrics."""
 
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import numpy as np
 import motmetrics as mm

@@ -8,10 +8,10 @@ import time
 
 import config
 from utils import ensure_dirs
-from detect import load_detector
-from track import track_sequence
-from evaluate import evaluate_all
-from heatmap import generate_sequence_heatmap
+from detection.detect import load_detector
+from tracking.track import track_sequence
+from evaluation.evaluate import evaluate_all
+from evaluation.heatmap import generate_sequence_heatmap
 
 
 def main():

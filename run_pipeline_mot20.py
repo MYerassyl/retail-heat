@@ -8,12 +8,12 @@ import time
 
 import config
 from utils import ensure_dirs
-from detect import load_detector
-from reid_embedder import ReIDEmbedder
-from track import track_sequence
-from track_deepsort import track_sequence_deepsort
-from evaluate import evaluate_all
-from heatmap import generate_sequence_heatmap
+from detection.detect import load_detector
+from tracking.reid_embedder import ReIDEmbedder
+from tracking.track import track_sequence
+from tracking.track_deepsort import track_sequence_deepsort
+from evaluation.evaluate import evaluate_all
+from evaluation.heatmap import generate_sequence_heatmap
 
 MOT20_SEQUENCES = config.MOT20_SEQUENCES
 

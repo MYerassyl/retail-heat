@@ -4,7 +4,8 @@ Usage:
     python compare.py
 """
 
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import cv2
 import numpy as np

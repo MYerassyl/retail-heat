@@ -6,15 +6,17 @@ Usage:
     python ablation_reid.py
 """
 
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
 import time
 
 import config
 from utils import ensure_dirs
-from detect import load_detector
-from reid_embedder import ReIDEmbedder
-from track_deepsort import track_sequence_deepsort
-from evaluate import evaluate_all
+from detection.detect import load_detector
+from tracking.reid_embedder import ReIDEmbedder
+from tracking.track_deepsort import track_sequence_deepsort
+from evaluation.evaluate import evaluate_all
 
 
 WEIGHTS_DIR = os.path.join(config.ROOT_DIR, "weights")

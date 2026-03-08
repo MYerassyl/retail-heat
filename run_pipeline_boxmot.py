@@ -15,9 +15,9 @@ from tqdm import tqdm
 
 import config
 from utils import ensure_dirs, get_frame_paths, save_tracks_mot_format
-from detect import load_detector, detect_sequence
-from evaluate import evaluate_all
-from heatmap import generate_sequence_heatmap
+from detection.detect import load_detector, detect_sequence
+from evaluation.evaluate import evaluate_all
+from evaluation.heatmap import generate_sequence_heatmap
 
 
 # Trackers to test: (name, class_name, needs_reid)

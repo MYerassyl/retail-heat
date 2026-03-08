@@ -4,7 +4,8 @@ Usage:
     python evaluate_heatmaps.py
 """
 
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import numpy as np
 import matplotlib
@@ -14,7 +15,7 @@ from scipy.stats import gaussian_kde
 
 import config
 from utils import load_mot_gt, parse_seqinfo, get_frame_paths
-from heatmap import generate_heatmap
+from evaluation.heatmap import generate_heatmap
 
 
 def _gt_centroids(seq_name):
@@ -239,7 +240,7 @@ def _generate_chart(results):
 def generate_gt_heatmaps():
     """Generate ground truth heatmaps and 3-way comparison images."""
     import cv2
-    from heatmap import overlay_heatmap
+    from evaluation.heatmap import overlay_heatmap
 
     all_sequences = list(config.SEQUENCES) + list(config.MOT20_SEQUENCES)
     gt_heatmap_dir = os.path.join(config.OUTPUT_DIR, "heatmaps_gt")

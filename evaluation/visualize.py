@@ -6,8 +6,10 @@ Usage:
     python visualize.py --tracker deepsort # DeepSORT only
 """
 
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
 import argparse
-import os
 from collections import defaultdict
 
 import cv2

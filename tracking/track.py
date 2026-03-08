@@ -6,8 +6,8 @@ import numpy as np
 from tqdm import tqdm
 
 import config
-from detect import load_detector, detect_sequence
-from sort_tracker import Sort
+from detection.detect import load_detector, detect_sequence
+from tracking.sort_tracker import Sort
 from utils import ensure_dirs, get_frame_paths, save_tracks_mot_format, xyxy_to_xywh
 
 
