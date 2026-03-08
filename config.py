@@ -38,6 +38,7 @@ DEEPSORT_NN_BUDGET = 100        # appearance gallery size per track
 DEEPSORT_MAX_IOU_DISTANCE = 0.5 # max IoU distance for fallback matching
 
 # ── ReID (OSNet) ─────────────────────────────────────────────────────────────
+# Download from https://huggingface.co/MYerassyl/retail-heat-osnet
 REID_MODEL_NAME = "osnet_x1_0"
 REID_MODEL_PATH = os.path.join(ROOT_DIR, "weights", "osnet_x1_0_market1501.pth")
 REID_IMAGE_SIZE = (256, 128)    # (height, width) for ReID input
